@@ -100,6 +100,7 @@ module.exports = function config (defaults, callback) {
 * `Heapdump` - Creates a heap snapshot.
 * `HttpReporter` - Implements the reporter interface over HTTP.
 * `IpcCommander` - Implements the command interface over IPC using `process.send()`.
+* `NewRelic` - Sets up New Relic monitoring without modifying your application.
 * `Policy` - Allows for the blacklisting of specific modules and bindings.
 * `ProcessReporter` - Implements the reporter interface over IPC using `process.send()`.
 * `Profiler` - Used to collect CPU profiles of a running application.
