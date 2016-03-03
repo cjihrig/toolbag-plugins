@@ -27,6 +27,7 @@
     "lodash.merge": "4.3.1",
     "loopbench": "1.2.0",
     "nes": "3.1.2",
+    "newrelic": "1.25.4",
     "v8-profiler": "5.6.0",
     "wreck": "7.0.0"
   },
