@@ -1,6 +1,9 @@
 # toolbag-plugins
 
-A collection of [toolbag](https://github.com/continuationlabs/toolbag) plugins. This repository is intended to be temporary. Each of these plugins will eventually be published as a standalone module on npm.
+A collection of [toolbag](https://github.com/continuationlabs/toolbag) plugins. This repository is intended to be temporary. Each of these plugins will eventually be published as a standalone module on npm. The following plugins have already been split out:
+
+* [`toolbag-plugin-stats-collector`](https://github.com/continuationlabs/toolbag-plugin-stats-collector) - Collects runtime data for things like CPU, memory, the event loop, handles, requests, and more.
+* [`toolbag-plugin-udp-reporter`](https://github.com/continuationlabs/toolbag-plugin-udp-reporter) - Implements the reporter interface over UDP.
 
 To use one or more of the plugins in this module, add `toolbag-plugins` to `package.json`. In `.toolbagrc.js`:
 
@@ -8,6 +11,8 @@ To use one or more of the plugins in this module, add `toolbag-plugins` to `pack
 'use strict';
 
 const ToolbagPlugins = require('toolbag-plugins');
+const StatsCollector = require('toolbag-plugin-stats-collector');
+const UdpReporter = require('toolbag-plugin-udp-reporter');
 
 module.exports = function config (defaults, callback) {
   callback(null, {
@@ -31,7 +36,7 @@ module.exports = function config (defaults, callback) {
         }
       },
       {
-        plugin: ToolbagPlugins.UdpReporter,
+        plugin: UdpReporter,
         options: {
           id: 'udp reporter',
           socketType: 'udp4',
@@ -53,7 +58,7 @@ module.exports = function config (defaults, callback) {
       },
       { plugin: ToolbagPlugins.Signal },
       {
-        plugin: ToolbagPlugins.StatsCollector,
+        plugin: StatsCollector,
         options: {
           enabled: true,
           period: 1000,
@@ -106,5 +111,3 @@ module.exports = function config (defaults, callback) {
 * `Profiler` - Used to collect CPU profiles of a running application.
 * `SharedSymbol` - Registers a global symbol that exposes `toolbag` to application code.
 * `Signal` - Sends signals to the running process.
-* `StatsCollector` - Collects runtime data for things like CPU, memory, the event loop, handles, requests, and more.
-* `UdpReporter` - Implements the reporter interface over UDP.
