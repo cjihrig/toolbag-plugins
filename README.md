@@ -4,6 +4,7 @@ A collection of [toolbag](https://github.com/continuationlabs/toolbag) plugins. 
 
 * [`toolbag-plugin-stats-collector`](https://github.com/continuationlabs/toolbag-plugin-stats-collector) - Collects runtime data for things like CPU, memory, the event loop, handles, requests, and more.
 * [`toolbag-plugin-udp-reporter`](https://github.com/continuationlabs/toolbag-plugin-udp-reporter) - Implements the reporter interface over UDP.
+* [`toolbag-plugin-policy`](https://github.com/continuationlabs/toolbag-plugin-policy) - Allows for the blacklisting of specific modules, methods, and bindings.
 
 To use one or more of the plugins in this module, add `toolbag-plugins` to `package.json`. In `.toolbagrc.js`:
 
@@ -11,6 +12,7 @@ To use one or more of the plugins in this module, add `toolbag-plugins` to `pack
 'use strict';
 
 const ToolbagPlugins = require('toolbag-plugins');
+const Policy = require('toolbag-plugin-policy');
 const StatsCollector = require('toolbag-plugin-stats-collector');
 const UdpReporter = require('toolbag-plugin-udp-reporter');
 
@@ -79,7 +81,7 @@ module.exports = function config (defaults, callback) {
         }
       },
       {
-        plugin: ToolbagPlugins.Policy,
+        plugin: Policy,
         options: {
           blacklist: {
             modules: {
@@ -106,7 +108,6 @@ module.exports = function config (defaults, callback) {
 * `HttpReporter` - Implements the reporter interface over HTTP.
 * `IpcCommander` - Implements the command interface over IPC using `process.send()`.
 * `NewRelic` - Sets up New Relic monitoring without modifying your application.
-* `Policy` - Allows for the blacklisting of specific modules and bindings.
 * `ProcessReporter` - Implements the reporter interface over IPC using `process.send()`.
 * `Profiler` - Used to collect CPU profiles of a running application.
 * `SharedSymbol` - Registers a global symbol that exposes `toolbag` to application code.
