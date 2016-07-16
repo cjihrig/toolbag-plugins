@@ -1,6 +1,6 @@
 {
   "name": "toolbag-plugins",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A collection of toolbag plugins",
   "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
   "main": "lib/index.js",
