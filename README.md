@@ -6,6 +6,8 @@ A collection of [toolbag](https://github.com/continuationlabs/toolbag) plugins. 
 * [`toolbag-plugin-udp-reporter`](https://github.com/continuationlabs/toolbag-plugin-udp-reporter) - Implements the reporter interface over UDP.
 * [`toolbag-plugin-policy`](https://github.com/continuationlabs/toolbag-plugin-policy) - Allows for the blacklisting of specific modules, methods, and bindings.
 * [`toolbag-plugin-reporter-error-policy`](https://github.com/continuationlabs/toolbag-plugin-reporter-error-policy) - Allows the reporting interface to be used for error handling.
+* [`toolbag-plugin-nsp-check`](https://github.com/continuationlabs/toolbag-plugin-nsp-check) - Checks an application's dependencies against the Node Security Project's known vulnerabilities database.
+
 
 To use one or more of the plugins in this module, add `toolbag-plugins` to `package.json`. In `.toolbagrc.js`:
 
